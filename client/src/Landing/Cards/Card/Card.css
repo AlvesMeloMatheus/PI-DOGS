@@ -1,0 +1,61 @@
+.BorderCard{
+
+    border: 3px solid black;
+    border-radius: 2rem;
+
+    width: 16.2rem;
+
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+
+    background-color: rgb(255, 255, 255, 0.8);
+
+}
+
+#CardName{
+   font-size: 120%;
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+
+}
+
+.DogImg{
+
+    border: solid rgb(0, 0, 0, 0.4) 1px;
+    border-radius: 1rem;
+
+    width: 13rem;
+    height: 10rem;
+
+}
+
+.BorderDogCharacter{
+
+    border: black solid;
+    border-radius: 1rem;
+
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.BtnDetail{
+    border: solid 1px black;
+}
+.BtnDetail:hover{
+    cursor: pointer;
+}
+
+#CharacterT{
+    margin-top: 0.1rem;
+    margin-bottom: 0.2rem;
+}
+
+#CharacterW{
+    margin-top: 0.1rem;
+    margin-bottom: 0.2rem;
+}

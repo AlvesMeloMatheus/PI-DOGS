@@ -1,0 +1,25 @@
+.InpF{
+    border: solid black 1px;
+
+    width: 25rem;
+
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+#BtnSub{
+    border: solid black 1px;
+    border-radius: 1rem;
+
+    background-color: white;
+
+    margin-bottom: 0.4rem;
+}
+
+#BtnSub:hover{
+    cursor: pointer;
+
+    color: white;
+
+    background-color: red;
+}

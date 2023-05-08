@@ -1,0 +1,16 @@
+.Container{
+
+    /* -------- position cards --------*/
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* -------- position cards --------*/
+}
+
+#NumPages{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
