@@ -1,4 +1,6 @@
-import {GET_BREED_BY_NAME, GET_DOGS, GET_DOGS_DETAIL, GET_TEMPERAMENTS, POST_DOGS} from "./types"
+import {GET_BREED_BY_NAME, GET_DOGS, GET_DOGS_DETAIL,
+     GET_TEMPERAMENTS, POST_DOGS,
+    ORDER_DOGS, FILTER_DOGS} from "./types"
 
 import axios from "axios";
 
@@ -38,6 +40,7 @@ export function getDogsDetail (idRaza) {
 export function getTemperaments () {
     return async function (dispatch) {
         const response = await axios.get("http://localhost:3001/temperaments");
+        console.log(response.data)
         return dispatch ({
             type: GET_TEMPERAMENTS, 
             payload: response.data,
@@ -59,6 +62,73 @@ export function postDogs (body) {
         });
     };
 };
+
+export function orderDogs(criterio, dogs) {
+    return async function (dispatch) {
+    console.log("action")
+      var orderedDogs = [];
+      if(criterio ===  "name_asc"){
+        orderedDogs = dogs.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (criterio === "name_dsc") {
+        orderedDogs = dogs.sort((a, b) => -a.name.localeCompare(b.name))
+      }else if (criterio === "weight_asc") {
+        orderedDogs = dogs.sort((a, b) => a.weight.localeCompare(b.weight));
+      } else if (criterio === "weight_dsc") {
+        orderedDogs = dogs.sort((a, b) => -a.weight.localeCompare(b.weight));
+
+      }else{
+        orderedDogs = dogs;
+      }
+
+      const resultArray =[...orderedDogs]
+          
+      console.log(orderedDogs)
+      console.log(resultArray)
+      return dispatch({
+        type: ORDER_DOGS,
+        payload: resultArray,
+      });
+    };
+  }
+  
+  export function filterByTemperament(temp, dogs) {
+    return async function (dispatch) {
+      var filteredDogs = [];
+    console.log(temp)
+      dogs.forEach((dog) => {
+        console.log(dog)
+        if (dog.temperament?.includes(temp)) {
+          filteredDogs.push(dog);
+        }
+      });
+  
+      return dispatch({
+        type: FILTER_DOGS,
+        payload: filteredDogs,
+      });
+    };
+  }
+  
+  export function filterIsApi(isFromAPI, dogs) {
+    return async function (dispatch) {
+      var filteredDogs = [];
+      //saber si el id es uuid o id normal, si uuid es de la db
+      const regexExp =
+        /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/gi;
+      dogs.forEach((dog) => {
+        if (isFromAPI && !regexExp.test(dog.id)) {
+          filteredDogs.push(dog);
+        } else if (!isFromAPI && regexExp.test(dog.id)) {
+          filteredDogs.push(dog);
+        }
+      });
+  
+      return dispatch({
+        type: FILTER_DOGS,
+        payload: filteredDogs,
+         });
+    };
+  }
 
   /*
         .then((response) => response.json())

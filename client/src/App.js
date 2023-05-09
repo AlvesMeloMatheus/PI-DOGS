@@ -4,8 +4,10 @@ import './App.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 // ------------ React ----------------
+
 import {Provider } from 'react-redux'
 import store from './Redux/store'
+
 
 import Landing from './Landing/Landing';
 import NotFound from './Landing/NotFound/NotFound';
@@ -15,7 +17,9 @@ import Cards from './Landing/Cards/Cards';
 import Detail from './Landing/Detail/Detail';
 import CreateDog from './Landing/CreateDog/CreateDog';
 
+
 import CardsSearch from './Landing/Search/CardsSearch';
+
 // ------------ components -----------
 
 function App() {

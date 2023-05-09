@@ -25,6 +25,7 @@ const SearchBar = ({onSearch}) => {
 
     function onSearch () {
      console.log(dog)
+     dispatch(getDogByName(dog))
       // vaciar el input TODO
   
     }

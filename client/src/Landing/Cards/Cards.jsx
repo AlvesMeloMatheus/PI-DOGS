@@ -10,6 +10,7 @@ import './Cards.css'
 import Card from './Card/Card'
 import PaginationCards from './PaginationCards.jsx';
 import { getAllDogs } from '../../Redux/actions';
+import FilterAndOrderBar from './FilterAndOrderBar/FilterAndOrderBar'
 // ---------- Components ----
 
 
@@ -35,6 +36,9 @@ const Cards = () => {
   return (
     <div className='Container'>
       <Provider store={store} >
+
+        <FilterAndOrderBar />
+
       {currentPosts.map((dog, index) => (
           <Card
           key={index}

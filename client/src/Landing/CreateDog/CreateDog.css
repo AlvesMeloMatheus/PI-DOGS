@@ -7,6 +7,60 @@
     border-bottom-right-radius: 1rem;
 }
 
+.InpF2{
+    border: solid black 1px;
+
+    width: 12rem;
+
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    margin-right: 10px;
+}
+
+.InpF2M{
+    border: solid black 1px;
+
+    width: 12rem;
+
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.Checkbox{
+
+    background-color: rgb(255, 255, 255, 0.8);
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    border: solid black 2px;
+
+    width: 33rem;
+
+    height: 60rem;
+
+    font-weight: 700;
+
+    padding: 5px;
+
+    margin-left: 26%;
+    margin-top: 5px;
+}
+
+.CheckboxContainer{
+    border: solid black 1px;
+
+    height: 20px;
+    width: 160px;
+}
+
+.CubeHover:hover{
+    cursor: pointer;
+}
+
 #BtnSub{
     border: solid black 1px;
     border-radius: 1rem;
